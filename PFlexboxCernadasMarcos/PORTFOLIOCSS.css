@@ -1,0 +1,174 @@
+:root {
+    --primary-color: #0a0a0a;
+    --secondary-color: #cfcfcf;
+    --text-color: #000000;
+    --bg-gradient: linear-gradient(135deg, #ffffff00 0%, #000000 100%);
+    --card-bg: #ffffff;
+}
+
+/* Estilos base y reseteo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+}
+
+/* Contenedor principal usando Flexbox para separar sidebar de contenido */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1; /* Empuja el footer hacia abajo */
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+    flex: 1 1 300px;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgb(255, 0, 0);
+}
+
+.profile-img {
+    width: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    object-fit: cover;
+}
+
+/* Navegación lateral en columna */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Botones con efecto Hover */
+.btn {
+    text-decoration: none;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Área de contenido principal */
+.main-content {
+    flex: 3 1 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Secciones individuales */
+.section {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    border-left: 5px solid var(--primary-color);
+    padding-left: 10px;
+    color: var(--primary-color);
+}
+
+img{
+    width: 400px;
+    height:200px;
+}
+
+/* Grid de elementos usando Flexbox Wrap */
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Estilo de las tarjetas (Cards) */
+.card {
+    flex: 1 1 calc(45% - 10px); /* Ocupa casi la mitad en pantallas grandes */
+    background: var(--secondary-color);
+    padding: 15px;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+
+/* Estilo para imágenes dentro de las cards de proyectos */
+.project-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Barras de progreso */
+.progress-bar {
+    background: #c1bcbc;
+    border-radius: 10px;
+    width: 200px;
+    height: 10px;
+    margin: 10px 0;
+}
+
+.progress {
+    background: var(--primary-color);
+    height: 100%;
+    border-radius: 10px;
+}
+.tag{
+    display: inline-block;
+    margin: 5px 5px;
+    padding: 10px 20px;
+    background-color: #9e0c0c;
+    color: rgb(255, 255, 255);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.tag:hover {
+    background-color: #000000;
+    transform: scale(1.08);
+}
+
+    
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Media Query para pantallas pequeñas*/
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .card {
+        flex: 1 1 100%;
+    }
+}
